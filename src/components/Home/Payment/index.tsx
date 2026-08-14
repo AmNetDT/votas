@@ -41,8 +41,11 @@ const Payment = () => {
               <span className="text-primary"> — in every polling unit, </span>
               for every result, for every voter.
             </h2>
-            <p className={`text-blue-500 md:text-18 text-base font-medium`}>
+            <p
+              className={`text-blue-500 md:text-18 text-base font-medium mb-3`}
+            >
               With real-time monitoring, secure transmission, and verified data,
+              <br />
               we protect your election from disruption to declaration.
             </p>
           </div>

@@ -33,12 +33,16 @@ const Spend: FC = () => {
         <div ref={ref}>
           <div className="text-center">
             <h2 className="md:text-35 sm:text-28 text-24 text-midnight_text font-semibold mb-5 dark:text-white">
-              The best way to
-              <span className="text-primary ml-2">spend and save</span>
+              We protect your interests and build confidence in the event of
+              <span className="bg-border dark:bg-darkHeroBg rounded-lg text-primary max-w-max ml-2">
+                litigation.
+              </span>
             </h2>
             <p className="text-17 text-muted dark:text-white/60 mx-1 lg:mx-64 mb-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Legal challenges can be unpredictable, but you don't have to face
+              them unprepared. We safeguard your interests and provide the
+              guidance you need to stay confident, ensuring that if litigation
+              ever arises, you remains fully protected and secure.
             </p>
           </div>
           <div className="flex justify-center items-center">
