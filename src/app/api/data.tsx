@@ -20,28 +20,6 @@ export const Heroimage = [
   },
 ];
 
-// payment
-export const PaymentImage = [
-  {
-    image: "/images/payment/user.svg",
-    title: "Create an account",
-    details:
-      "Mobile app made easy check out across the web and in apps without having to enter any payment information.",
-  },
-  {
-    image: "/images/benefit/contact.svg",
-    title: "Verify your identity",
-    details:
-      "Mobile app made easy check out across the web and in apps without having to enter any payment information.",
-  },
-  {
-    image: "/images/benefit/bank.svg",
-    title: "Link your bank account",
-    details:
-      "Mobile app made easy check out across the web and in apps without having to enter any payment information.",
-  },
-];
-
 // Beneifit
 export const BeneifitImage = [
   {
@@ -73,74 +51,6 @@ export const BeneifitImage = [
   },
 ];
 
-// Footer Links
-export const footerLinks: { link: string }[] = [
-  {
-    link: "Online Payments",
-  },
-  {
-    link: "Financial Projections",
-  },
-  {
-    link: "Bookkeeping",
-  },
-  {
-    link: "Banking",
-  },
-  {
-    link: "Documentation",
-  },
-  {
-    link: "Integrations",
-  },
-  {
-    link: "API Reference",
-  },
-  {
-    link: "Support",
-  },
-  {
-    link: "Help",
-  },
-  {
-    link: "Infrastructure",
-  },
-  {
-    link: "Certifications",
-  },
-  {
-    link: "Licenses",
-  },
-  {
-    link: "Terms and conditions",
-  },
-  {
-    link: "Legal",
-  },
-  {
-    link: "Privacy",
-  },
-  {
-    link: "Cookies",
-  },
-  {
-    link: "Disclaimer",
-  },
-];
-
-// Perks
-export const perks = [
-  {
-    text: "When you pay with a debit or credit card, Mobile App doesn't keep transaction information that can be tied back to you.",
-  },
-  {
-    text: "Digital wallets are becoming more popular than ever before.",
-  },
-  {
-    text: "You can also add your student ID card to Wallet to access places like your dorm and the library.",
-  },
-];
-
 // review
 export const review = [
   {
@@ -152,4 +62,3 @@ export const review = [
     gplayrating: "4.5",
   },
 ];
-
