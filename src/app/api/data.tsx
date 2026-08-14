@@ -92,9 +92,9 @@ export const perks = [
 // review
 export const review = [
   {
-    text: "It's easy to set up and the support experience is unparalleled. every transaction the instant it happens and correct wasteful behavior. What a relief.",
-    name: "Nina B. Freeman",
-    post: "Founder at Litchi Care",
+    text: "'A absolute game-changer for operational transparency.' 'The Situation Room completely transformed how we monitor and manage complex operations in real time. The seamless data flow from the field to our central dashboard gave us total visibility, eliminated discrepancies, and boosted team confidence overnight. If you need speed, security, and uncompromised accuracy, this software is non-negotiable.'",
+    name: "Withheld",
+    post: "— Director of Technology & Operations",
     image: "/images/search/profile.png",
     appstorerating: "4.5",
     gplayrating: "4.5",
