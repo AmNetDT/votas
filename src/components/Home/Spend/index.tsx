@@ -77,7 +77,7 @@ const Spend: FC = () => {
                     <iframe
                       height="400"
                       className="p-4 md:w-50 w-full"
-                      src="https://www.youtube.com/embed/zzBxZeOTuDw?si=o8O6J_Z9OjdCbtcq"
+                      src="https://youtu.be/l31SAe-sfrU?si=qnZjdPJfurtmyzZI"
                       title="YouTube video player"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
