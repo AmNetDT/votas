@@ -13,18 +13,21 @@ const Mobile = () => {
   return (
     <section className="dark:bg-darkmode overflow-x-hidden py-14">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
-        <div ref={ref} className="grid md:grid-cols-12 items-center lg:gap-12 gap-6">
+        <div
+          ref={ref}
+          className="grid md:grid-cols-12 items-center lg:gap-12 gap-6"
+        >
           <div className="lg:col-span-6 col-span-12">
             <h2 className="lg:text-35 text-24 text-midnight_text font-semibold dark:text-white">
-              Mobile wallets made for
+              Multi-Stakeholder Dashboard &
               <br />
               <span className="lg:text-35 text-24 text-primary font-semibold lg:max-w-max">
-                any situation
+                Public Visibility
               </span>
             </h2>
             <p className="mt-6 text-muted dark:text-white/60 lg:text-17 lg:max-w-full sm:max-w-75%">
-              Cards issued through us can easily be added to mobile wallets to
-              be used to buy online, in store, and in-app.
+              Key benefits and features designed to secure the election
+              ecosystem from the polling unit to the final collation center.
             </p>
             <div className="flex flex-col gap-6 mt-16">
               {perks.map((item, index) => (

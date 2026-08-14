@@ -79,13 +79,13 @@ export const BeneifitImage = [
 // Perks
 export const perks = [
   {
-    text: "When you pay with a debit or credit card, Mobile App doesn't keep transaction information that can be tied back to you.",
+    text: "Real-Time Polling Unit Verification: Our system allows for instant verification of polling unit results, ensuring transparency and accuracy in the electoral process.",
   },
   {
-    text: "Digital wallets are becoming more popular than ever before.",
+    text: "Tamper-Evident Digital Result Transmission: We utilize secure, tamper-evident methods for transmitting results from polling units to central servers, preventing unauthorized alterations.",
   },
   {
-    text: "You can also add your student ID card to Wallet to access places like your dorm and the library.",
+    text: "Multi-Stakeholder Dashboard & Public Visibility: Our platform provides a comprehensive dashboard accessible to multiple stakeholders among our clients, enhancing accountability and trust in the electoral process.",
   },
 ];
 
