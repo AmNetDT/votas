@@ -22,7 +22,7 @@ const Search = () => {
           key={`full-${i}`}
           icon="ph:star-fill"
           className="w-5 h-5 text-yellow-500"
-        />
+        />,
       );
     }
 
@@ -32,7 +32,7 @@ const Search = () => {
           key="half"
           icon="ph:star-half-fill"
           className="w-5 h-5 text-yellow-500"
-        />
+        />,
       );
     }
 
@@ -42,7 +42,7 @@ const Search = () => {
           key={`empty-${i}`}
           icon="ph:star-bold"
           className="w-5 h-5 text-yellow-500"
-        />
+        />,
       );
     }
 
@@ -56,51 +56,6 @@ const Search = () => {
           ref={ref}
           className="dark:bg-midnight_text bg-hero-bg rounded-3xl p-2"
         >
-          <div
-            className="text-center lg:px-20 px-4 pt-20"
-          >
-            <div className="flex justify-center">
-              <Image
-                src="/images/search/free.png"
-                alt="image"
-                width={67}
-                height={38}
-              />
-            </div>
-            <h2 className="text-midnight_text font-bold dark:text-white md:text-35 sm:text-28 text-24">
-              Get started in under <span className="lg:text-35 text-primary text-24"> 15 minutes </span>
-            </h2>
-            <div className="md:max-w-75% mx-auto mt-6">
-              <div className="flex lg:items-center md:items-start items-center bg-white sm:flex-row flex-col dark:bg-darkHeroBg shadow-md rounded-2xl overflow-hidden">
-                <input
-                  type="email"
-                  placeholder="Enter your email address."
-                  className="grow px-4 py-5 pl-6 text-midnight_text dark:text-heroBg text-17 focus:outline-hidden bg-white dark:bg-darkHeroBg"
-                />
-                <div className="mr-3">
-                  <Link
-                    href="/contact"
-                    className="text-17 flex items-center bg-primary text-white py-3 px-8 rounded-lg w-36  my-2 border border-primary hover:text-primary hover:bg-transparent"
-                  >
-                    Get Demo
-                  </Link>
-                </div>
-              </div>
-              <div className="flex items-center justify-center my-7">
-                <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                  <Icon
-                    icon="solar:unread-outline"
-                    width="24"
-                    height="24"
-                    className="text-white"
-                  />
-                </div>
-                <p className="ml-4 text-17 text-muted dark:text-white/60">
-                  No personal credit checks or guarantee, with 20x higher limits
-                </p>
-              </div>
-            </div>
-          </div>
           <div>
             {review.map((item, index) => (
               <div
@@ -153,7 +108,7 @@ const Search = () => {
                           <span className="text-midnight_text dark:text-white font-bold">
                             {item.appstorerating}
                           </span>
-                          /5 — From 1800+ ratings
+                          /5 — From 18+ ratings
                         </p>
                       </div>
                       <div>
@@ -176,7 +131,7 @@ const Search = () => {
                           <span className="text-midnight_text dark:text-white font-bold">
                             {item.gplayrating}
                           </span>
-                          /5 — From 1800+ ratings
+                          /5 — From 18+ ratings
                         </p>
                       </div>
                       <div>
