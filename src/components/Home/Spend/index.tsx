@@ -33,7 +33,9 @@ const Spend: FC = () => {
         <div ref={ref}>
           <div className="text-center">
             <h2 className="md:text-35 sm:text-28 text-24 text-midnight_text font-semibold mb-5 dark:text-white">
-              We protect your interests and build confidence in the event of
+              We protect your interests and build
+              <br />
+              confidence in the event of
               <span className="bg-border dark:bg-darkHeroBg rounded-lg text-primary max-w-max ml-2">
                 litigation.
               </span>
