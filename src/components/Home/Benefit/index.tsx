@@ -40,10 +40,9 @@ const Benefit = () => {
             </div>
             <div className="xl:col-span-6 col-span-12">
               <p className="sm:text-25 text-18 text-midnight_text font-medium dark:text-white">
-                Technology is the shield. Integrity is the promise. We don’t
-                just deploy systems. We protect the entire election ecosystem,
-                from the polling unit to the collation center, ensuring that
-                every vote is counted and every voice is heard.
+                We protect the entire election ecosystem, from the polling unit
+                to the collation center, ensuring that every vote is counted and
+                every voice is heard.
               </p>
               {BeneifitImage.map((item, index) => (
                 <div key={index} className="sm:flex items-center mt-8">

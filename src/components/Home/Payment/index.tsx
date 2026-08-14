@@ -39,10 +39,12 @@ const Payment = () => {
             <h2 className="text-center font-semibold md:text-35 sm:text-28 text-24 mb-8 text-midnight_text dark:text-white lg:mx-44">
               We deploy confidence
               <span className="text-primary"> — in every polling unit, </span>
-              for every result, for every voter.With real-time monitoring,
-              secure transmission, and verified data, we protect your election
-              from disruption to declaration.
+              for every result, for every voter.
             </h2>
+            <p className={`text-blue-500 md:text-18 text-base font-medium`}>
+              With real-time monitoring, secure transmission, and verified data,
+              we protect your election from disruption to declaration.
+            </p>
           </div>
           <div className="flex flex-wrap justify-center gap-10">
             {paymentItems.map((item, index) => (

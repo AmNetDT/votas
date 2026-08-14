@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Icon } from "@iconify/react";
-import { Heroimage } from "@/app/api/data";
+// import { Heroimage } from "@/app/api/data";
 
 const Hero = () => {
   const leftAnimation = {
