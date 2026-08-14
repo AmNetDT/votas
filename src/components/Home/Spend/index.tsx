@@ -47,45 +47,71 @@ const Spend: FC = () => {
               ever arises, you remains fully protected and secure.
             </p>
           </div>
-          <div className="flex justify-center items-center">
-            <div className="relative overflow-hidden mt-14">
+          <div className="flex justify-center items-center px-4">
+            {/* Thumbnail Container */}
+            <div className="relative overflow-hidden mt-14 rounded-2xl group max-w-[600px] w-full shadow-2xl">
               <Image
                 src="/images/spend/spend.png"
-                alt="image"
-                width={550}
-                height={350}
-                className="rounded-lg w-full"
+                alt="Video Thumbnail"
+                width={600}
+                height={380}
+                className="rounded-2xl w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
+
+              {/* Dark overlay on hover for better play button contrast */}
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+
+              {/* Perfectly Centered Play Button */}
               <button
-                className="text-midnight_text absolute z-1 top-40% md:left-1/2 left-45% rounded-full hover:text-primary py-4 px-3 bg-white cursor-pointer"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 
+                     flex items-center justify-center w-16 h-16 rounded-full bg-white/90 dark:bg-darkmode/90 
+                     text-midnight_text hover:text-primary hover:bg-white hover:scale-110 
+                     shadow-lg transition-all duration-300 cursor-pointer focus:outline-none"
                 onClick={openModal}
+                aria-label="Play Video"
               >
-                <Icon icon="solar:play-bold" width="24" height="16" />
+                <Icon icon="solar:play-bold" className="w-7 h-7 ml-1" />
               </button>
-              {isModalOpen && (
-                <div className="fixed top-0 left-0 w-full h-full bg-black/50 z-50 flex items-center justify-center">
-                  <div className="bg-white dark:bg-darkmode rounded-lg sm:m-0 m-4">
-                    <div className="overlay flex items-center justify-between border-b border-solid border-border dark:border-dark_border p-5  dark:border-darkborder">
-                      <h3 className="text-midnight_text dark:text-white">
-                        Video
-                      </h3>
-                      <button
-                        onClick={closeModal}
-                        className="bg-[url('/images/icon/closed.svg')] bg-no-repeat bg-contain w-5 h-5 inline-block dark:invert"
-                      ></button>
-                    </div>
+            </div>
+
+            {/* Video Modal */}
+            {isModalOpen && (
+              <div
+                className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300"
+                onClick={closeModal} // Closes modal when clicking backdrop
+              >
+                <div
+                  className="bg-white dark:bg-darkmode rounded-2xl overflow-hidden w-full max-w-3xl shadow-2xl transition-all scale-100"
+                  onClick={(e) => e.stopPropagation()} // Prevents modal close when clicking inside video content
+                >
+                  {/* Modal Header */}
+                  <div className="flex items-center justify-between border-b border-border dark:border-dark_border p-4 sm:p-5">
+                    <h3 className="text-lg font-semibold text-midnight_text dark:text-white">
+                      Video Presentation
+                    </h3>
+                    <button
+                      onClick={closeModal}
+                      className="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white 
+                           p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+                      aria-label="Close modal"
+                    >
+                      <Icon icon="lucide:x" className="w-6 h-6" />
+                    </button>
+                  </div>
+
+                  {/* Responsive 16:9 Aspect Ratio Iframe Wrapper */}
+                  <div className="relative w-full aspect-video bg-black">
                     <iframe
-                      height="400"
-                      className="p-4 md:w-50 w-full"
-                      src="https://youtu.be/l31SAe-sfrU?si=qnZjdPJfurtmyzZI"
+                      className="absolute top-0 left-0 w-full h-full border-0"
+                      src="https://www.youtube.com/embed/l31SAe-sfrU?autoplay=1&rel=0"
                       title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                     ></iframe>
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
