@@ -48,28 +48,31 @@ export const BeneifitImage = [
     image: "/images/benefit/pic.svg",
     alt: "Trusted brand",
     details:
-      "Stop wasteful spend and save thousands with unlimited points and insights that maximize savings.",
+      "Direct, encrypted uploading of signed result sheets (e.g., EC8A forms) from polling units to a central public view portal immediately after counting.",
   },
   {
     image: "/images/benefit/contact.svg",
     alt: "Trusted brand",
-    details: "See where the company money is going in real time.",
+    details:
+      "Real-time tracking for sensitive materials (ballot boxes, result sheets) and transport personnel moving between polling units and ward/LGA collation centers.",
   },
   {
     image: "/images/benefit/bank.svg",
     alt: "Trusted brand",
-    details: "Powered by the free app that helps you run your whole business.",
+    details:
+      "Flags discrepancies instantly, protecting collation officers from coercion and ensuring math integrity.",
   },
   {
     image: "/images/benefit/files.svg",
     alt: "Trusted brand",
-    details: "No more lost receipts and tedious paperwork.",
+    details:
+      "Open-access monitoring portals for election observers, party agents, security agencies, and the public.",
   },
   {
     image: "/images/benefit/setting.svg",
     alt: "Trusted brand",
     details:
-      "It's an all-digital card designed for online, and even in-store shopping.",
+      "Ensures remote or rural polling units are not left vulnerable to data loss or manipulation when uploading results once back online.",
   },
 ];
 

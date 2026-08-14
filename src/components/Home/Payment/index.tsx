@@ -42,7 +42,7 @@ const Payment = () => {
               for every result, for every voter.
             </h2>
             <p
-              className={`text-blue-500 md:text-18 text-base font-medium mb-3`}
+              className={`text-center text-blue-500 md:text-18 text-base font-medium mb-3`}
             >
               With real-time monitoring, secure transmission, and verified data,
               <br />
