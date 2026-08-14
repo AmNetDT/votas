@@ -141,12 +141,13 @@ const Footer = () => {
         </div>
         <div className="flex items-center sm:flex-row flex-col justify-between py-10 mt-8">
           <p className="text-16 text-foottext sm:mb-0 mb-4">
-            © Copyright 2025. All rights reserved by <Link
-              href="https://getnextjstemplates.com/"
+            © Copyright {new Date().getFullYear()}. All rights reserved by{" "}
+            <Link
+              href="https://votas.com.ng/"
               target="_blank"
               className="hover:text-primary"
             >
-              GetNextJs Templates.
+              Votas
             </Link>
           </p>
           <div className="flex gap-4">
