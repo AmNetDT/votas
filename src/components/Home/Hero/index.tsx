@@ -10,14 +10,14 @@ const Hero = () => {
     initial: { x: "-10%", opacity: 0 },
     animate: { x: 0, opacity: 1 },
     exit: { x: "-10%", opacity: 0 },
-    transition: { duration: .5 },
+    transition: { duration: 0.5 },
   };
 
   const rightAnimation = {
     initial: { x: "10%", opacity: 0 },
     animate: { x: 0, opacity: 1 },
     exit: { x: "10%", opacity: 0 },
-    transition: { duration: .5 },
+    transition: { duration: 0.5 },
   };
   return (
     <section className="relative pt-44 bg-cover bg-center dark:bg-darkmode">
@@ -64,34 +64,6 @@ const Hero = () => {
                     height="13"
                   />
                 </Link>
-              </div>
-            </div>
-
-            <div className="lg:my-28 my-12">
-              <p className="text-20 text-muted dark:text-white/60 text-start mb-7">
-                Trusted by
-              </p>
-              <div className="flex space-x-6 justify-start w-full">
-                {Heroimage.map((item, index) => (
-                  <Link key={index} href="/">
-                    <Image
-                      src={item.lightimage}
-                      alt="image"
-                      width={115}
-                      height={30}
-                      className="block dark:hidden"
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                    <Image
-                      src={item.darkimage}
-                      alt="image"
-                      width={115}
-                      height={30}
-                      className="hidden dark:block"
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </Link>
-                ))}
               </div>
             </div>
           </motion.div>
