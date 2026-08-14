@@ -26,17 +26,16 @@ const Hero = () => {
         <div className="grid grid-cols-12 items-center">
           <motion.div {...leftAnimation} className="lg:col-span-6 col-span-12">
             <h1 className="md:text-50 sm:text-40 text-28 text-midnight_text dark:text-white lg:text-start mb-6 lg:w-full sm:w-3/4">
-              Quickest and easiest
+              Your mandate.
               <br />
               <span className="bg-border dark:bg-darkHeroBg md:text-50 text-36 rounded-lg lg:text-start text-primary max-w-max">
-                online payment
+                Our technology.
               </span>
               <br />
-              platform for your product.
+              Our shared commitment to credibility.
             </h1>
             <p className="sm:text-19 text-16 text-muted dark:text-white/60 text-start lg:max-w-full sm:max-w-75%">
-              Embed powerful financial features into your product, Build in
-              minutes, launch in weeks.
+              Securing Every Vote. Protecting Every Voice.
             </p>
             <div className="flex md:flex-nowrap flex-wrap items-center mt-12 sm:gap-11 gap-6">
               <div>

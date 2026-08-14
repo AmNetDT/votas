@@ -1,7 +1,7 @@
 "use client";
 import { useReducer } from "react";
 import Link from "next/link";
-import { motion, useInView } from "motion/react";
+// import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Icon } from "@iconify/react";
 
@@ -82,10 +82,11 @@ const Pricing = () => {
             <div className="text-center pb-6">
               <div className="inline-flex items-center bg-hero-bg dark:bg-midnight_text dark:bg-semidark rounded-lg p-2">
                 <button
-                  className={`text-17 font-normal cursor-pointer text-midnight_text dark:text-white py-3 px-7 rounded-lg ${tabConfig.planType === "Monthly"
+                  className={`text-17 font-normal cursor-pointer text-midnight_text dark:text-white py-3 px-7 rounded-lg ${
+                    tabConfig.planType === "Monthly"
                       ? "bg-white text-darkmode dark:bg-darkmode"
                       : ""
-                    }`}
+                  }`}
                   onClick={() =>
                     dispatch({
                       type: "Monthly",
@@ -101,10 +102,11 @@ const Pricing = () => {
                   Monthly
                 </button>
                 <button
-                  className={`text-17 font-normal cursor-pointer text-midnight_text dark:text-white py-3 px-7 rounded-lg ${tabConfig.planType === "Annually"
+                  className={`text-17 font-normal cursor-pointer text-midnight_text dark:text-white py-3 px-7 rounded-lg ${
+                    tabConfig.planType === "Annually"
                       ? "bg-white text-darkmode dark:bg-darkmode"
                       : ""
-                    }`}
+                  }`}
                   onClick={() =>
                     dispatch({
                       type: "Annually",

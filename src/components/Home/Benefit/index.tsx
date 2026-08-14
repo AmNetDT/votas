@@ -18,12 +18,12 @@ const Benefit = () => {
         >
           <div className="items-start">
             <h2 className="font-bold md:text-35 sm:text-28 text-24 text-midnight_text dark:text-white">
-              How will
+              How we protect your
               <span className="bg-border dark:bg-darkHeroBg rounded-lg text-primary max-w-max ml-2">
-                online payment
+                election
               </span>
               <br />
-              platform benefit your product.
+              from disruption to declaration.
             </h2>
           </div>
           <div className="grid grid-cols-12 items-center mt-16 md:gap-12 sm:gap-8">
@@ -38,10 +38,12 @@ const Benefit = () => {
                 />
               </div>
             </div>
-            <div className="xl:col-span-6 col-span-12" >
+            <div className="xl:col-span-6 col-span-12">
               <p className="sm:text-25 text-18 text-midnight_text font-medium dark:text-white">
-                Grow revenues and delight your customers by building financial
-                features.
+                Technology is the shield. Integrity is the promise. We don’t
+                just deploy systems. We protect the entire election ecosystem,
+                from the polling unit to the collation center, ensuring that
+                every vote is counted and every voice is heard.
               </p>
               {BeneifitImage.map((item, index) => (
                 <div key={index} className="sm:flex items-center mt-8">
@@ -62,7 +64,7 @@ const Benefit = () => {
                   href="/contact"
                   className="text-17 flex gap-3 items-center bg-primary text-white py-3 px-8 rounded-lg  mt-12 border border-primary hover:text-primary hover:bg-transparent"
                 >
-                  Content Us
+                  Contact Us
                   <Icon
                     icon="solar:alt-arrow-right-linear"
                     width="13"

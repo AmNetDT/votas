@@ -24,21 +24,21 @@ export const Heroimage = [
 export const PaymentImage = [
   {
     image: "/images/payment/user.svg",
-    title: "Create an account",
+    title: "Party Agent",
     details:
-      "Mobile app made easy check out across the web and in apps without having to enter any payment information.",
+      "Manage all party agent activities, from tracking their arrival at the polling unit to other related tasks.",
   },
   {
     image: "/images/benefit/contact.svg",
-    title: "Verify your identity",
+    title: "INEC Presiding officer",
     details:
-      "Mobile app made easy check out across the web and in apps without having to enter any payment information.",
+      "This manages all INEC presiding officer operations at the polling unit, covering the arrival of election materials and attendant staff, and the overall conduct of activities at the unit",
   },
   {
     image: "/images/benefit/bank.svg",
-    title: "Link your bank account",
+    title: "PU Security",
     details:
-      "Mobile app made easy check out across the web and in apps without having to enter any payment information.",
+      "The PU Security module manages polling unit security end-to-end, tracking security personnel arrival, personnel type, and conduct at the polling unit, as well as securing the votes during transit to the ward collation center.",
   },
 ];
 

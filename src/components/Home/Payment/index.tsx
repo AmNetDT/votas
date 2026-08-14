@@ -14,17 +14,17 @@ const Payment = () => {
     transition: { duration: 1, delay: 0.4 },
   };
 
-  const bottomAnimation = (index : any) => ({
+  const bottomAnimation = (index: any) => ({
     initial: { y: "100%", opacity: 0 },
     animate: inView ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 },
     transition: { duration: 1, delay: 0.4 + index * 0.4 },
   });
 
   const paymentItems = [
-    "Cards",
-    "Expenses",
-    "Bill Pay",
-    "Accounting",
+    "Arrival & Check-in",
+    "Chain of Command",
+    "BVAS State",
+    "Accreditation ",
     "Reporting",
   ];
 
@@ -37,9 +37,11 @@ const Payment = () => {
         <motion.div {...TopAnimation}>
           <div className="px-4 lg:px-12">
             <h2 className="text-center font-semibold md:text-35 sm:text-28 text-24 mb-8 text-midnight_text dark:text-white lg:mx-44">
-              Easy and affordable for your personal and
-              <span className="text-primary"> business payment </span>
-              needs.
+              We deploy confidence
+              <span className="text-primary"> — in every polling unit, </span>
+              for every result, for every voter.With real-time monitoring,
+              secure transmission, and verified data, we protect your election
+              from disruption to declaration.
             </h2>
           </div>
           <div className="flex flex-wrap justify-center gap-10">
