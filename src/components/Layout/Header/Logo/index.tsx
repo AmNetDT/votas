@@ -7,7 +7,7 @@ const Logo: React.FC = () => {
       <Image
         src="/images/logo/logo.PNG"
         alt="logo"
-        width={160}
+        width={50}
         height={50}
         quality={100}
         className="dark:hidden"
@@ -16,7 +16,7 @@ const Logo: React.FC = () => {
       <Image
         src="/images/logo/logo2.PNG"
         alt="logo"
-        width={140}
+        width={30}
         height={30}
         quality={100}
         className="hidden dark:block"
