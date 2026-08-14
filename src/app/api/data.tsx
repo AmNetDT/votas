@@ -20,6 +20,28 @@ export const Heroimage = [
   },
 ];
 
+// payment
+export const PaymentImage = [
+  {
+    image: "/images/payment/user.svg",
+    title: "Create an account",
+    details:
+      "Mobile app made easy check out across the web and in apps without having to enter any payment information.",
+  },
+  {
+    image: "/images/benefit/contact.svg",
+    title: "Verify your identity",
+    details:
+      "Mobile app made easy check out across the web and in apps without having to enter any payment information.",
+  },
+  {
+    image: "/images/benefit/bank.svg",
+    title: "Link your bank account",
+    details:
+      "Mobile app made easy check out across the web and in apps without having to enter any payment information.",
+  },
+];
+
 // Beneifit
 export const BeneifitImage = [
   {
@@ -48,6 +70,19 @@ export const BeneifitImage = [
     alt: "Trusted brand",
     details:
       "It's an all-digital card designed for online, and even in-store shopping.",
+  },
+];
+
+// Perks
+export const perks = [
+  {
+    text: "When you pay with a debit or credit card, Mobile App doesn't keep transaction information that can be tied back to you.",
+  },
+  {
+    text: "Digital wallets are becoming more popular than ever before.",
+  },
+  {
+    text: "You can also add your student ID card to Wallet to access places like your dorm and the library.",
   },
 ];
 
