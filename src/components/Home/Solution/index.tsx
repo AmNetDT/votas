@@ -11,11 +11,13 @@ const Solution = () => {
             <div>
               <h2 className="md:text-35 sm:text-28 text-24 font-semibold text-midnight_text dark:text-white">
                 Enterprise
-                <span className="text-primary max-w-max ml-2">Solution</span>
+                <span className="text-primary max-w-max ml-2">Solution.</span>
+                <br />
+                Clear & Direct (Best for High Conversion/Sales)
               </h2>
               <p className="mt-6 text-base text-muted dark:text-white/60 lg:max-w-full sm:max-w-75%">
-                Fully programmable, debit - credit physical & virtual cards for
-                individuals and businesses.
+                Bespoke software engineered to align seamlessly with your
+                operational needs and scale your business.
               </p>
               <Link
                 href="/contact"

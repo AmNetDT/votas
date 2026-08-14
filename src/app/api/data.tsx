@@ -92,7 +92,7 @@ export const perks = [
 // review
 export const review = [
   {
-    text: "'A absolute game-changer for operational transparency.' 'The Situation Room completely transformed how we monitor and manage complex operations in real time. The seamless data flow from the field to our central dashboard gave us total visibility, eliminated discrepancies, and boosted team confidence overnight. If you need speed, security, and uncompromised accuracy, this software is non-negotiable.'",
+    text: '"A absolute game-changer for operational transparency." The Situation Room completely transformed how we monitor and manage complex operations in real time. The seamless data flow from the field to our central dashboard gave us total visibility, eliminated discrepancies, and boosted team confidence overnight. If you need speed, security, and uncompromised accuracy, this software is non-negotiable.',
     name: "Withheld",
     post: "— Director of Technology & Operations",
     image: "/images/search/profile.png",
