@@ -1,7 +1,7 @@
 "use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Icon } from "@iconify/react";
 import { BeneifitImage } from "@/app/api/data";
@@ -10,64 +10,82 @@ const Benefit = () => {
   const ref = useRef(null);
 
   return (
-    <section className="dark:bg-darkmode py-14 overflow-x-hidden">
-      <div className="container lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4 mx-auto">
+    <section className="dark:bg-darkmode py-12 md:py-20 overflow-hidden">
+      <div className="container max-w-7xl px-4 sm:px-6 mx-auto">
+        {/* Main Card Wrapper */}
         <div
           ref={ref}
-          className="dark:bg-midnight_text bg-hero-bg rounded-3xl md:py-20 py-10 2xl:pr-14 2xl:pl-20 sm:px-14 px-6"
+          className="dark:bg-midnight_text bg-hero-bg rounded-3xl py-10 px-6 sm:px-10 md:py-16 lg:py-20 lg:px-16 shadow-xl border border-slate-200/50 dark:border-white/10"
         >
-          <div className="items-start">
-            <h2 className="font-bold md:text-35 sm:text-28 text-24 text-midnight_text dark:text-white">
-              How we protect your
-              <span className="bg-border dark:bg-darkHeroBg rounded-lg text-primary max-w-max ml-2">
+          {/* Section Heading */}
+          <div className="max-w-3xl">
+            <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl leading-tight text-midnight_text dark:text-white">
+              How we protect your{" "}
+              <span className="inline-block bg-primary/10 dark:bg-primary/20 text-primary px-3 py-1 rounded-xl text-2xl sm:text-3xl md:text-4xl my-1">
                 election
-              </span>
-              <br />
+              </span>{" "}
               from disruption to declaration.
             </h2>
           </div>
-          <div className="grid grid-cols-12 items-center mt-16 md:gap-12 sm:gap-8">
-            <div className="xl:col-span-6 col-span-12 sm:block hidden">
-              <div className="xl:px-0 lg:px-20">
+
+          {/* Grid Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mt-10 md:mt-14">
+            {/* Feature Image */}
+            <div className="lg:col-span-6 col-span-12 order-2 lg:order-1">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg border border-slate-200/60 dark:border-white/10">
                 <Image
                   src="/images/benefit/benefit.jpeg"
-                  alt="image"
-                  width={500}
-                  height={350}
-                  style={{ width: "100%", height: "100%" }}
+                  alt="Election integrity solution"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover rounded-2xl transition-transform duration-500 hover:scale-105"
+                  priority
                 />
               </div>
             </div>
-            <div className="xl:col-span-6 col-span-12">
-              <p className="sm:text-25 text-18 text-midnight_text font-medium dark:text-white">
+
+            {/* Content Details & Benefits List */}
+            <div className="lg:col-span-6 col-span-12 order-1 lg:order-2 flex flex-col justify-center">
+              <p className="text-lg sm:text-xl md:text-2xl text-midnight_text font-semibold dark:text-white leading-relaxed mb-8">
                 We protect the entire election ecosystem, from the polling unit
                 to the collation center, ensuring that every vote is counted and
                 every voice is heard.
               </p>
-              {BeneifitImage.map((item, index) => (
-                <div key={index} className="sm:flex items-center mt-8">
-                  <Image
-                    src={item.image}
-                    alt="Trusted brand"
-                    width={100}
-                    height={100}
-                    className="w-8 h-8 sm:mr-4 sm:mb-0 mb-3 "
-                  />
-                  <p className="text-17 text-muted dark:text-white/60">
-                    {item.details}
-                  </p>
-                </div>
-              ))}
-              <div className="flex items-center lg:justify-start justify-center">
+
+              {/* Benefits List */}
+              <div className="space-y-4">
+                {BeneifitImage.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 p-3.5 sm:p-4 rounded-xl bg-white/50 dark:bg-white/5 border border-slate-200/40 dark:border-white/5 transition-all duration-300 hover:border-primary/40"
+                  >
+                    <div className="shrink-0 p-2 bg-white dark:bg-slate-800 rounded-lg shadow-xs">
+                      <Image
+                        src={item.image}
+                        alt="Benefit icon"
+                        width={24}
+                        height={24}
+                        className="w-6 h-6 object-contain"
+                      />
+                    </div>
+                    <p className="text-sm sm:text-base text-slate-700 dark:text-white/80 leading-snug pt-0.5">
+                      {item.details}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Call to Action Button */}
+              <div className="mt-8 sm:mt-10 flex justify-start">
                 <Link
                   href="/contact"
-                  className="text-17 flex gap-3 items-center bg-primary text-white py-3 px-8 rounded-lg  mt-12 border border-primary hover:text-primary hover:bg-transparent"
+                  className="inline-flex items-center gap-3 bg-primary text-white font-medium py-3.5 px-8 rounded-xl border border-primary transition-all duration-300 hover:bg-transparent hover:text-primary hover:shadow-lg focus:outline-hidden"
                 >
-                  Contact Us
+                  <span>Contact Us</span>
                   <Icon
                     icon="solar:alt-arrow-right-linear"
-                    width="13"
-                    height="13"
+                    width="18"
+                    height="18"
                   />
                 </Link>
               </div>
