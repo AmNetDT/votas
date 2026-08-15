@@ -1,197 +1,261 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
+
+import { useState, ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
 
+interface FormData {
+  firstname: string;
+  lastname: string;
+  email: string;
+  phone: string;
+  date: string;
+  time: string;
+}
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const initialFormState: FormData = {
     firstname: "",
     lastname: "",
     email: "",
-    specialist: "",
+    phone: "",
     date: "",
-    time: ""
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [loader, setLoader] = useState(false);
-  const handleChange = (e: any) => {
+    time: "",
+  };
+
+  const [formData, setFormData] = useState<FormData>(initialFormState);
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [loader, setLoader] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
-  const reset = () => {
-    formData.firstname = "";
-    formData.lastname = "";
-    formData.email = "design & branding";
-    formData.specialist = "";
-    formData.date = "";
-    formData.time = "";
+
+  const resetForm = () => {
+    setFormData(initialFormState);
   };
-  const handleSubmit = async (e: any) => {
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoader(true);
+    setErrorMessage("");
+    setSubmitted(false);
 
-    fetch("https://formsubmit.co/ajax/bhainirav772@gmail.com", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        firstname: formData.firstname,
-        lastname: formData.lastname,
-        email: formData.email,
-        specialist: formData.specialist,
-        date: formData.date,
-        time: formData.time
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/amnetbs@gmail.com",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        },
+      );
 
-        setSubmitted(data.success);
-        reset();
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+      const data = await response.json();
+
+      if (data.success === "true" || response.ok) {
+        setSubmitted(true);
+        resetForm();
+      } else {
+        setErrorMessage("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setErrorMessage("Network error. Please check your connection.");
+    } finally {
+      setLoader(false);
+    }
   };
+
   return (
-    <>
-      <section className="dark:bg-darkmode pb-24">
-        <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
-          <div className="grid md:grid-cols-12 grid-cols-1 gap-8">
-            <div className="col-span-6">
-              <h2 className="max-w-72 text-40 font-bold mb-9">
-                Get Online Consultation
-              </h2>
-              <form onSubmit={handleSubmit} className="flex flex-wrap w-full m-auto justify-between">
-                <div className="sm:flex gap-3 w-full">
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label
-                      htmlFor="first-name"
-                      className="pb-3 inline-block text-17"
-                    >
-                      First Name*
-                    </label>
-                    <input
-                      id='firstname'
-                      type='text'
-                      name='firstname'
-                      value={formData.firstname}
-                      onChange={handleChange}
-                      className="w-full text-17 px-4 rounded-lg py-2.5 border-border dark:border-dark_border border-solid dark:text-white dark:bg-transparent border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0"
-                    />
-                  </div>
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label
-                      htmlFor="last-name"
-                      className="pb-3 inline-block text-17"
-                    >
-                      Last Name*
-                    </label>
-                    <input
-                      id='lastname'
-                      type='text'
-                      name='lastname'
-                      value={formData.lastname}
-                      onChange={handleChange}
-                      className="w-full text-17 px-4 py-2.5 rounded-lg border-border dark:border-dark_border border-solid dark:text-white  dark:bg-transparent border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0"
-                    />
-                  </div>
+    <section className="dark:bg-darkmode pb-24 pt-12">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Form Column */}
+          <div className="lg:col-span-6 col-span-12">
+            <h2 className="max-w-md text-3xl sm:text-4xl font-bold mb-4 dark:text-white">
+              Request a Demo
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-8">
+              Have questions? Reach out to us at{" "}
+              <a
+                href="mailto:info@votas.com.ng"
+                className="text-primary font-medium underline hover:text-blue-600"
+              >
+                info@votas.com.ng
+              </a>{" "}
+              and we&apos;ll respond promptly.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Name Row */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1">
+                  <label
+                    htmlFor="firstname"
+                    className="block text-sm font-medium pb-2 dark:text-white"
+                  >
+                    First Name*
+                  </label>
+                  <input
+                    id="firstname"
+                    type="text"
+                    name="firstname"
+                    required
+                    value={formData.firstname}
+                    onChange={handleChange}
+                    placeholder="John"
+                    className="w-full text-base px-4 py-2.5 rounded-lg border border-border dark:border-dark_border dark:text-white dark:bg-transparent transition-colors focus:border-primary focus:outline-none"
+                  />
                 </div>
-                <div className="sm:flex gap-3 w-full">
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label
-                      htmlFor="email"
-                      className="pb-3 inline-block text-17"
-                    >
-                      Email address*
-                    </label>
-                    <input
-                      id='email'
-                      type='email'
-                      name='email'
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full text-17 px-4 py-2.5 rounded-lg border-border dark:border-dark_border border-solid dark:text-white  dark:bg-transparent border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0"
-                    />
-                  </div>
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label
-                      htmlFor="Specialist"
-                      className="pb-3 inline-block text-17"
-                    >
-                      Specialist*
-                    </label>
-                    <select name="specialist"
-                      id="specialist"
-                      value={formData.specialist}
-                      onChange={handleChange} className="w-full text-17 px-4 py-2.5 rounded-lg border-border dark:text-white border-solid dark:bg-transparent border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0">
-                      <option value="">Choose a specialist</option>
-                      <option value="Baking &amp; Pastry">
-                        Choose a specialist
-                      </option>
-                      <option value="Exotic Cuisine">Exotic Cuisine</option>
-                      <option value="French Desserts">French Desserts</option>
-                      <option value="Seafood &amp; Wine">
-                        Choose a specialist
-                      </option>
-                    </select>
-                  </div>
+                <div className="flex-1">
+                  <label
+                    htmlFor="lastname"
+                    className="block text-sm font-medium pb-2 dark:text-white"
+                  >
+                    Last Name*
+                  </label>
+                  <input
+                    id="lastname"
+                    type="text"
+                    name="lastname"
+                    required
+                    value={formData.lastname}
+                    onChange={handleChange}
+                    placeholder="Doe"
+                    className="w-full text-base px-4 py-2.5 rounded-lg border border-border dark:border-dark_border dark:text-white dark:bg-transparent transition-colors focus:border-primary focus:outline-none"
+                  />
                 </div>
-                <div className="sm:flex gap-3 w-full">
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label htmlFor="date" className="pb-3 inline-block text-17">
-                      Date*
-                    </label>
-                    <input
-                      id='date'
-                      type='date'
-                      name='date'
-                      value={formData.date}
-                      onChange={handleChange}
-                      className="w-full text-17 px-4 rounded-lg  py-2.5 outline-hidden dark:text-white dark:bg-transparent border-border border-solid border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0"
-                    />
-                  </div>
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label htmlFor="time" className="pb-3 inline-block text-17">
-                      Time*
-                    </label>
-                    <input
-                      id='time'
-                      type='time'
-                      name='time'
-                      value={formData.time}
-                      onChange={handleChange}
-                      className="w-full text-17 px-4 rounded-lg py-2.5 border-border outline-hidden dark:text-white dark:bg-transparent border-solid border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0"
-                    />
-                  </div>
+              </div>
+
+              {/* Contact Info Row */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium pb-2 dark:text-white"
+                  >
+                    Email Address*
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="john@example.com"
+                    className="w-full text-base px-4 py-2.5 rounded-lg border border-border dark:border-dark_border dark:text-white dark:bg-transparent transition-colors focus:border-primary focus:outline-none"
+                  />
                 </div>
-                <div className="mx-0 my-2.5 w-full">
-                  <button
-                    type='submit'
-                    className='bg-primary rounded-lg text-white py-4 px-8 mt-4 inline-block hover:bg-blue-700 cursor-pointer'>
-                    Make an appointment
-                  </button>
+                <div className="flex-1">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium pb-2 dark:text-white"
+                  >
+                    Phone
+                  </label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+234 123 456 7890"
+                    className="w-full text-base px-4 py-2.5 rounded-lg border border-border dark:border-dark_border dark:text-white dark:bg-transparent transition-colors focus:border-primary focus:outline-none"
+                  />
                 </div>
-              </form>
-            </div>
-            <div className="col-span-6">
-              <Image
-                src="/images/contact-page/contact.jpg"
-                alt="Contact"
-                width={1300}
-                height={0}
-                quality={100}
-                style={{ width: "100%", height: "auto" }}
-                className="bg-no-repeat bg-contain"
-              />
-            </div>
+              </div>
+
+              {/* Appointment Date & Time */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1">
+                  <label
+                    htmlFor="date"
+                    className="block text-sm font-medium pb-2 dark:text-white"
+                  >
+                    Preferred Date*
+                  </label>
+                  <input
+                    id="date"
+                    type="date"
+                    name="date"
+                    required
+                    value={formData.date}
+                    onChange={handleChange}
+                    className="w-full text-base px-4 py-2.5 rounded-lg border border-border dark:border-dark_border dark:text-white dark:bg-transparent transition-colors focus:border-primary focus:outline-none"
+                  />
+                </div>
+                <div className="flex-1">
+                  <label
+                    htmlFor="time"
+                    className="block text-sm font-medium pb-2 dark:text-white"
+                  >
+                    Preferred Time*
+                  </label>
+                  <input
+                    id="time"
+                    type="time"
+                    name="time"
+                    required
+                    value={formData.time}
+                    onChange={handleChange}
+                    className="w-full text-base px-4 py-2.5 rounded-lg border border-border dark:border-dark_border dark:text-white dark:bg-transparent transition-colors focus:border-primary focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Submission Feedback Messages */}
+              {submitted && (
+                <div className="p-4 rounded-lg bg-green-500/10 border border-green-500 text-green-600 dark:text-green-400 text-sm">
+                  ✓ Your request has been sent successfully! We will contact you
+                  shortly.
+                </div>
+              )}
+
+              {errorMessage && (
+                <div className="p-4 rounded-lg bg-red-500/10 border border-red-500 text-red-600 dark:text-red-400 text-sm">
+                  {errorMessage}
+                </div>
+              )}
+
+              {/* Submit Button */}
+              <div>
+                <button
+                  type="submit"
+                  disabled={loader}
+                  className="w-full sm:w-auto bg-primary rounded-lg text-white py-3.5 px-8 mt-2 hover:bg-blue-700 transition-all cursor-pointer font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {loader ? (
+                    <>
+                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                      Submitting...
+                    </>
+                  ) : (
+                    "Schedule Appointment"
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
+
+          {/* Image Column */}
+          <div className="lg:col-span-6 col-span-12 flex justify-center">
+            <Image
+              src="/images/contact-page/contact.jpg"
+              alt="Contact Us"
+              width={600}
+              height={500}
+              priority
+              className="w-full h-auto max-w-lg lg:max-w-none rounded-2xl object-cover"
+            />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

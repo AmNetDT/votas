@@ -49,18 +49,20 @@ const Payment = () => {
               we protect your election from disruption to declaration.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-10">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 max-w-3xl mx-auto px-4">
             {paymentItems.map((item, index) => (
-              <p
+              <div
                 key={index}
-                className={`text-muted dark:text-white/60 md:text-18 text-base font-medium relative ${
-                  index !== paymentItems.length - 1
-                    ? "after:content-[''] after:absolute after:w-0.5 after:h-3/4 after:bg-muted after:rounded-full after:-right-5 after:top-0.5"
-                    : ""
-                }`}
+                className="px-4 py-2 rounded-full text-xs sm:text-sm md:text-base font-medium 
+                          bg-slate-100 dark:bg-white/5 
+                          text-slate-700 dark:text-slate-200 
+                          border border-slate-200/80 dark:border-white/10 
+                          hover:border-primary/50 dark:hover:border-primary/50 
+                          hover:text-primary dark:hover:text-primary
+                          transition-all duration-300 ease-in-out cursor-default shadow-xs"
               >
                 {item}
-              </p>
+              </div>
             ))}
           </div>
         </motion.div>

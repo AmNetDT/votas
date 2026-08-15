@@ -30,7 +30,7 @@ const Benefit = () => {
             <div className="xl:col-span-6 col-span-12 sm:block hidden">
               <div className="xl:px-0 lg:px-20">
                 <Image
-                  src="/images/benefit/benefit.svg"
+                  src="/images/benefit/benefit.jpeg"
                   alt="image"
                   width={500}
                   height={350}

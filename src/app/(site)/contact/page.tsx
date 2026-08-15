@@ -16,7 +16,7 @@ const page = () => {
     <>
       <HeroSub
         title="Contact Us"
-        description="Letraset sheets containing Lorem Ipsum passages and more recently with desktop publishing Variou"
+        description="Have questions? Reach out to us at info@votas.com.ng and we’ll get back to you promptly."
         breadcrumbLinks={breadcrumbLinks}
       />
       <ContactInfo />

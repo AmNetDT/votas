@@ -51,7 +51,7 @@ const Spend: FC = () => {
             {/* Thumbnail Container */}
             <div className="relative overflow-hidden mt-14 rounded-2xl group max-w-[600px] w-full shadow-2xl">
               <Image
-                src="/images/spend/spend.png"
+                src="/images/spend/spend.jpeg"
                 alt="Video Thumbnail"
                 width={600}
                 height={380}
