@@ -40,7 +40,7 @@ const Hero = () => {
             <div className="flex md:flex-nowrap flex-wrap items-center mt-12 sm:gap-11 gap-6">
               <div>
                 <Link
-                  href="/#started"
+                  href="/contact"
                   className="text-17 flex gap-2 items-center bg-primary text-white py-3 px-8 rounded-lg border border-primary hover:text-primary hover:bg-transparent"
                 >
                   Get Started

@@ -67,32 +67,47 @@ const Payment = () => {
           </div>
         </motion.div>
 
-        <div className="flex justify-start sm:mt-20 mt-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-14 gap-8">
+        <div className="w-full flex justify-center mt-12 sm:mt-16 lg:mt-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 w-full max-w-7xl px-4 sm:px-6">
             {PaymentImage.map((item, index) => (
-              <div key={index}>
-                <motion.div {...bottomAnimation(index)}>
-                  <div className="rounded-full">
+              <motion.div
+                key={index}
+                {...bottomAnimation(index)}
+                className="group relative flex flex-col items-start p-6 sm:p-8 rounded-2xl 
+                       bg-white/60 dark:bg-slate-900/50 
+                       border border-slate-200/80 dark:border-white/10 
+                       backdrop-blur-md shadow-xs hover:shadow-xl hover:border-primary/40 dark:hover:border-primary/40 
+                       transition-all duration-300 ease-in-out"
+              >
+                {/* Icon / Image Container */}
+                <div className="relative mb-6">
+                  <div
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white dark:bg-slate-800 
+                              p-3 sm:p-4 shadow-md group-hover:shadow-primary/20 
+                              border border-slate-100 dark:border-slate-700/50 
+                              flex items-center justify-center 
+                              transition-transform duration-300 group-hover:scale-105"
+                  >
                     <Image
                       src={item.image}
                       alt={`Brand: ${item.title}`}
-                      width={80}
-                      height={80}
-                      className="rounded-full bg-white p-4 shadow-lg dark:bg-midnight_text"
+                      width={64}
+                      height={64}
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="py-4">
-                    <p className="lg:text-25 text-22 font-medium text-midnight_text dark:text-white">
-                      {item.title}
-                    </p>
-                  </div>
-                  <div className="mr-2">
-                    <p className="text-base text-muted dark:text-white/60">
-                      {item.details}
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
+                </div>
+
+                {/* Content Header */}
+                <h3 className="text-xl sm:text-2xl font-bold text-midnight_text dark:text-white mb-3 group-hover:text-primary transition-colors duration-200">
+                  {item.title}
+                </h3>
+
+                {/* Details Paragraph */}
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300/80 leading-relaxed">
+                  {item.details}
+                </p>
+              </motion.div>
             ))}
           </div>
         </div>

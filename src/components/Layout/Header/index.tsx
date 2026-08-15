@@ -149,13 +149,13 @@ const Header: React.FC = () => {
                   {user?.user || session?.user?.name}
                 </p>
               </div>
-              <Link
+              {/* <Link
                 onClick={() => handleSignOut()}
                 href="/signin"
                 className="hidden lg:flex items-center bg-primary border border-primary hover:border-primary dark:text-white text-white px-4 py-2  gap-2 rounded-lg text-16 font-semibold hover:bg-transparent hover:text-primary dark:hover:text-primary"
               >
                 Sign Out
-              </Link>
+              </Link> */}
             </>
           ) : (
             <>
@@ -163,7 +163,7 @@ const Header: React.FC = () => {
                 href="/signin"
                 className="hidden lg:flex items-center bg-primary border border-primary hover:border-primary dark:text-white text-white px-4 py-2  gap-2 rounded-lg text-16 font-semibold hover:bg-transparent hover:text-primary dark:hover:text-primary"
               >
-                Sign In
+                Login
                 <Icon icon="solar:arrow-right-linear" width="24" height="24" />
               </Link>
 
@@ -232,7 +232,7 @@ const Header: React.FC = () => {
                 setNavbarOpen(false);
               }}
             >
-              Sign In
+              Login
             </Link>
             {/* <Link
               href="/signup"
