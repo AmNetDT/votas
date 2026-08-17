@@ -16,7 +16,7 @@ const page = () => {
     <>
       <HeroSub
         title="Contact Us"
-        description="Have questions? Reach out to us at info@votas.com.ng and we’ll get back to you promptly."
+        description="Book an Appointment? Reach out to us at info@votas.com.ng and we’ll get back to you promptly."
         breadcrumbLinks={breadcrumbLinks}
       />
       <ContactInfo />
