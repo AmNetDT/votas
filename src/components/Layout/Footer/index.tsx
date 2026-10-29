@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Bottom Bar - Fully Responsive */}
         <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 py-6 sm:py-8 text-center sm:text-left">
-          <p className="text-sm sm:text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
+          <p className="text-sm sm:text-[15px] leading-relaxed m-3 text-slate-600 dark:text-slate-400">
             © Copyright {currentYear}. All rights reserved by{" "}
             <Link
               href="https://votas.com.ng/"
