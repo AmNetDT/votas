@@ -159,13 +159,13 @@ const Header: React.FC = () => {
             </>
           ) : (
             <>
-              <Link
+              {/* <Link
                 href="/signin"
                 className="hidden lg:flex items-center bg-primary border border-primary hover:border-primary dark:text-white text-white px-4 py-2  gap-2 rounded-lg text-16 font-semibold hover:bg-transparent hover:text-primary dark:hover:text-primary"
               >
                 Login
                 <Icon icon="solar:arrow-right-linear" width="24" height="24" />
-              </Link>
+              </Link> */}
 
               {/* <Link
                 href="/signup"
