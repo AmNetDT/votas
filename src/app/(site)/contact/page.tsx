@@ -19,7 +19,10 @@ const page = () => {
         description="Book an Appointment? Reach out to us at info@votas.com.ng and we’ll get back to you promptly."
         breadcrumbLinks={breadcrumbLinks}
       />
-      <ContactInfo />
+      <p className="text-DeepOcean font-normal text-xl max-w-80 pt-3 pb-7 dark:text-white/60">
+        09024550723 &nbsp; 08135277641
+      </p>
+      {/* <ContactInfo /> */}
       <ContactForm />
     </>
   );
