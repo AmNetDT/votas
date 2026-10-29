@@ -77,7 +77,7 @@ const Benefit = () => {
               </div>
 
               {/* Contact Button */}
-              <div className="mt-6 sm:mt-8 flex justify-start w-full">
+              {/* <div className="mt-6 sm:mt-8 flex justify-start w-full">
                 <Link
                   href="/contact"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary text-white font-medium py-3 px-6 sm:px-8 rounded-xl border border-primary transition-all duration-300 hover:bg-transparent hover:text-primary active:scale-95 text-sm sm:text-base"
@@ -89,7 +89,7 @@ const Benefit = () => {
                     height="18"
                   />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

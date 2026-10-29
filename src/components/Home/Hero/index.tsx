@@ -37,7 +37,7 @@ const Hero = () => {
             <p className="sm:text-19 text-16 text-muted dark:text-white/60 text-start lg:max-w-full sm:max-w-75%">
               Securing Every Vote. Protecting Every Voice.
             </p>
-            <div className="flex md:flex-nowrap flex-wrap items-center mt-12 sm:gap-11 gap-6">
+            {/* <div className="flex md:flex-nowrap flex-wrap items-center mt-12 sm:gap-11 gap-6">
               <div>
                 <Link
                   href="/contact"
@@ -64,7 +64,7 @@ const Hero = () => {
                   />
                 </Link>
               </div>
-            </div>
+            </div> */}
           </motion.div>
           <motion.div
             {...rightAnimation}
