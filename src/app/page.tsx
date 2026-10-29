@@ -4,12 +4,11 @@ import Hero from "@/components/Home/Hero";
 import Payment from "@/components/Home/Payment";
 import Benefit from "@/components/Home/Benefit";
 import Spend from "@/components/Home/Spend";
-// import Method from "@/components/Home/Method";
 import Mobile from "@/components/Home/Mobile";
 import Search from "@/components/Home/Search";
-// import Pricing from "@/components/Home/Pricing";
 import Solution from "@/components/Home/Solution";
 import ContactForm from "@/components/Contact/Form";
+import DownloadButton from "@/components/ui/DownloadButton";
 
 export const metadata: Metadata = {
   title: "Votas",
@@ -22,11 +21,27 @@ export default function Home() {
       <Payment />
       <Benefit />
       <Spend />
-      {/* <Method /> */}
       <Mobile />
       <Search />
-      {/* <Pricing /> */}
       <Solution />
+
+      {/* PDF Download Section */}
+      <section className="py-12 md:py-20 bg-slate-50 dark:bg-slate-900/50">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold dark:text-white mb-3">
+            Want to learn more?
+          </h3>
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto">
+            Download our company brochure with pricing, features and case
+            studies.
+          </p>
+          <DownloadButton
+            fileUrl="/files/votas-brochure.pdf"
+            fileName="Votas-Brochure.pdf"
+          />
+        </div>
+      </section>
+
       <ContactForm />
     </main>
   );
