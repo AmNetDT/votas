@@ -32,8 +32,7 @@ export default function Home() {
             Want to learn more?
           </h3>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto">
-            Download our company brochure with pricing, features and case
-            studies.
+            Download our company brochure with features.
           </p>
           <DownloadButton
             fileUrl="/files/votas-brochure.pdf"
