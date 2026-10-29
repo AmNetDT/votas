@@ -21,7 +21,7 @@ const Footer = () => {
           </p>
 
           {/* Optional Links - Uncomment when needed, already responsive */}
-          <div className="flex items-center gap-6">
+          {/* <div className="flex items-center gap-6">
             <Link
               href="/privacy"
               className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
@@ -40,7 +40,7 @@ const Footer = () => {
             >
               Contact
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
