@@ -28,10 +28,6 @@ export default function Home() {
       {/* <Pricing /> */}
       <Solution />
       <ContactForm />
-
-      <p className="text-DeepOcean font-normal text-xl max-w-80 pt-3 pb-7 dark:text-white/60">
-        09024550723 &nbsp; 08135277641
-      </p>
     </main>
   );
 }
