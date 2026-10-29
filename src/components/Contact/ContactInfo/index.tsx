@@ -13,13 +13,13 @@ const ContactInfo = () => {
               </div>
               <div className="flex md:flex-col sm:flex-row flex-col md:items-start sm:items-center items-start h-full justify-between">
                 <div>
-                  {/* <span className="text-midnight_text dark:text-white text-xl font-bold">
+                   <span className="text-midnight_text dark:text-white text-xl font-bold">
                     Email US
                   </span>
                   <p className="text-DeepOcean font-normal text-xl max-w-80 pt-3 pb-7 dark:text-white/60">
                     We’re here to help. Contact our team at info@votas.com.ng
                     and we’ll respond shortly.
-                  </p> */}
+                  </p> 
                 </div>
               </div>
             </div> */}
