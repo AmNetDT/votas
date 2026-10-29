@@ -29,15 +29,10 @@ const ContactForm = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const resetForm = () => {
-    setFormData(initialFormState);
-  };
+  const resetForm = () => setFormData(initialFormState);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,16 +49,14 @@ const ContactForm = () => {
           body: JSON.stringify(formData),
         },
       );
-
       const data = await response.json();
-
       if (data.success === "true" || response.ok) {
         setSubmitted(true);
         resetForm();
       } else {
         setErrorMessage("Something went wrong. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setErrorMessage("Network error. Please check your connection.");
     } finally {
       setLoader(false);
@@ -71,35 +64,26 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="dark:bg-darkmode py-8 sm:py-16 md:py-24 overflow-hidden w-full">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <section className="dark:bg-darkmode py-8 md:py-16 lg:py-24 overflow-hidden w-full">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-start lg:items-center">
           {/* Form Column */}
-          <div className="lg:col-span-6 col-span-12 w-full">
-            <div className="bg-white/50 dark:bg-slate-900/40 p-5 sm:p-8 rounded-2xl border border-slate-200/60 dark:border-white/10 shadow-sm backdrop-blur-md">
-              {/* Heading Section */}
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 dark:text-white tracking-tight">
+          <div className="w-full lg:col-span-7 order-2 lg:order-1">
+            <div className="bg-white/70 dark:bg-slate-900/40 p-5 sm:p-6 md:p-8 rounded-2xl border border-slate-200/60 dark:border-white/10 shadow-sm backdrop-blur-md">
+              <h2 className="text-[28px] leading-tight sm:text-3xl md:text-4xl font-bold mb-3 dark:text-white tracking-tight">
                 Request a Demo
               </h2>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-                Book an Appointment? Reach out to us at{" "}
-                <a
-                  href="mailto:info@votas.com.ng"
-                  className="text-primary font-semibold underline hover:text-blue-600 transition-colors"
-                >
-                  info@votas.com.ng
-                </a>{" "}
-                and we&apos;ll respond promptly.
+                Book an appointment? Reach out to us and we&apos;ll respond
+                promptly.
               </p>
 
-              {/* Form Input Group */}
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-                {/* Name Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label
                       htmlFor="firstname"
-                      className="block text-xs sm:text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
+                      className="block text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
                     >
                       First Name*
                     </label>
@@ -111,13 +95,13 @@ const ContactForm = () => {
                       value={formData.firstname}
                       onChange={handleChange}
                       placeholder="John"
-                      className="w-full text-sm sm:text-base px-4 py-3 rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                      className="w-full text-[16px] sm:text-sm px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="lastname"
-                      className="block text-xs sm:text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
+                      className="block text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
                     >
                       Last Name*
                     </label>
@@ -129,17 +113,16 @@ const ContactForm = () => {
                       value={formData.lastname}
                       onChange={handleChange}
                       placeholder="Doe"
-                      className="w-full text-sm sm:text-base px-4 py-3 rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                      className="w-full text-[16px] sm:text-sm px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                     />
                   </div>
                 </div>
 
-                {/* Contact Info Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-xs sm:text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
+                      className="block text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
                     >
                       Email Address*
                     </label>
@@ -151,13 +134,13 @@ const ContactForm = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@example.com"
-                      className="w-full text-sm sm:text-base px-4 py-3 rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                      className="w-full text-[16px] sm:text-sm px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-xs sm:text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
+                      className="block text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
                     >
                       Phone
                     </label>
@@ -168,17 +151,16 @@ const ContactForm = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+234 123 456 7890"
-                      className="w-full text-sm sm:text-base px-4 py-3 rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                      className="w-full text-[16px] sm:text-sm px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                     />
                   </div>
                 </div>
 
-                {/* Appointment Date & Time */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label
                       htmlFor="date"
-                      className="block text-xs sm:text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
+                      className="block text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
                     >
                       Preferred Date*
                     </label>
@@ -189,13 +171,13 @@ const ContactForm = () => {
                       required
                       value={formData.date}
                       onChange={handleChange}
-                      className="w-full text-sm sm:text-base px-4 py-3 min-h-[46px] rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                      className="w-full text-[16px] sm:text-sm px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="time"
-                      className="block text-xs sm:text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
+                      className="block text-sm font-medium pb-1.5 text-gray-700 dark:text-gray-200"
                     >
                       Preferred Time*
                     </label>
@@ -206,36 +188,33 @@ const ContactForm = () => {
                       required
                       value={formData.time}
                       onChange={handleChange}
-                      className="w-full text-sm sm:text-base px-4 py-3 min-h-[46px] rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                      className="w-full text-[16px] sm:text-sm px-4 py-3 min-h-[48px] rounded-xl border border-slate-200 dark:border-dark_border dark:text-white bg-white dark:bg-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                     />
                   </div>
                 </div>
 
-                {/* Feedback Notifications */}
                 {submitted && (
-                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-600 dark:text-green-400 text-sm flex items-center gap-2">
-                    <span>✓</span> Your request has been sent successfully! We
-                    will contact you shortly.
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-600 dark:text-green-400 text-sm">
+                    ✓ Your request has been sent successfully! We will contact
+                    you shortly.
                   </div>
                 )}
-
                 {errorMessage && (
                   <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 text-sm">
                     {errorMessage}
                   </div>
                 )}
 
-                {/* Submit Action */}
                 <div className="pt-2">
                   <button
                     type="submit"
                     disabled={loader}
-                    className="w-full sm:w-auto bg-primary text-white font-medium py-3.5 px-8 rounded-xl hover:bg-blue-700 active:scale-[0.98] transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2.5 shadow-md shadow-primary/20"
+                    className="w-full sm:w-auto bg-primary text-white font-medium py-3.5 px-8 rounded-xl hover:bg-blue-700 active:scale-[0.98] transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2.5 shadow-md shadow-primary/20 min-h-[48px]"
                   >
                     {loader ? (
                       <>
                         <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                        <span>Submitting...</span>
+                        Submitting...
                       </>
                     ) : (
                       "Schedule Appointment"
@@ -247,15 +226,15 @@ const ContactForm = () => {
           </div>
 
           {/* Image Column */}
-          <div className="lg:col-span-6 col-span-12 flex justify-center w-full">
-            <div className="relative w-full max-w-lg lg:max-w-none overflow-hidden rounded-2xl shadow-md border border-slate-200/60 dark:border-white/10">
+          <div className="w-full lg:col-span-5 order-1 lg:order-2">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/5] overflow-hidden rounded-2xl shadow-md border border-slate-200/60 dark:border-white/10">
               <Image
                 src="/images/contact-page/contact.jpg"
                 alt="Contact Us"
-                width={600}
-                height={500}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
-                className="w-full h-auto max-h-[500px] object-cover rounded-2xl"
+                className="object-cover"
               />
             </div>
           </div>

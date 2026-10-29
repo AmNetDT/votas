@@ -136,7 +136,7 @@ const Header: React.FC = () => {
 
           {user?.user || session?.user ? (
             <>
-              <div className="relative group">
+              {/* <div className="relative group">
                 <Image
                   src="/images/avatar/avatar_1.jpg"
                   alt="Image"
@@ -148,7 +148,7 @@ const Header: React.FC = () => {
                 <p className="absolute w-fit text-sm text-center z-10 invisible group-hover:visible transition-opacity duration-200 bg-primary text-white p-1 px-3 min-w-28 rounded-lg shadow-2xl top-full left-1/2 transform -translate-x-1/2 mt-3">
                   {user?.user || session?.user?.name}
                 </p>
-              </div>
+              </div> */}
               {/* <Link
                 onClick={() => handleSignOut()}
                 href="/signin"
@@ -176,7 +176,7 @@ const Header: React.FC = () => {
               </Link> */}
             </>
           )}
-
+          {/* 
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
             className="block lg:hidden p-2 rounded-lg"
@@ -185,7 +185,7 @@ const Header: React.FC = () => {
             <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
             <span className="block w-6 h-0.5 bg-black dark:bg-white mt-1.5"></span>
             <span className="block w-6 h-0.5 bg-black dark:bg-white mt-1.5"></span>
-          </button>
+          </button> */}
         </div>
       </div>
       <div
