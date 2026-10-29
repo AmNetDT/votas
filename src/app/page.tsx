@@ -35,8 +35,8 @@ export default function Home() {
             Download our company brochure with features.
           </p>
           <DownloadButton
-            fileUrl="/files/votas-brochure.pdf"
-            fileName="Votas-Brochure.pdf"
+            fileUrl="/files/Votas-User-Guide.pdf"
+            fileName="Votas-User-Guide.pdf"
           />
         </div>
       </section>
