@@ -1,32 +1,46 @@
-// import Image from "next/image";
 import Link from "next/link";
-// import { Icon } from "@iconify/react";
-// import { footerLinks } from "@/app/api/data";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="pt-8 relative bg-white after:content-[''] after:absolute after:bg-no-repeat after:w-52 after:h-24 after:right-0 after:top-28 xl:after:block after:hidden">
-      <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-2">
-        <div className="flex items-center sm:flex-row flex-col justify-between py-10 mt-8">
-          <p className="text-16 sm:mb-0 mb-4">
-            © Copyright {new Date().getFullYear()}. All rights reserved by{" "}
+    <footer className="relative w-full bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-white/5 pt-2">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Bottom Bar - Fully Responsive */}
+        <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 py-6 sm:py-8 text-center sm:text-left">
+          <p className="text-sm sm:text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
+            © Copyright {currentYear}. All rights reserved by{" "}
             <Link
               href="https://votas.com.ng/"
               target="_blank"
-              className="hover:text-primary text-black"
+              rel="noopener noreferrer"
+              className="font-medium text-black dark:text-white hover:text-primary dark:hover:text-primary transition-colors"
             >
               Votas
             </Link>
           </p>
-          {/* <div className="flex gap-4">
-            {footerLinks.slice(14, 17).map((item, index) => (
-              <div key={index} className="">
-                <Link href="#" className="text-black hover:text-primary">
-                  {item.link}
-                </Link>
-              </div>
-            ))}
-          </div> */}
+
+          {/* Optional Links - Uncomment when needed, already responsive */}
+          <div className="flex items-center gap-6">
+            <Link
+              href="/privacy"
+              className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+            >
+              Contact
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
