@@ -7,7 +7,7 @@ const ContactInfo = () => {
       <section className="dark:bg-darkmode pt-8 pb-24">
         <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
           <div className="flex md:flex-row flex-col items-center justify-center md:gap-28 gap-8 mt-10">
-            <div className="flex sm:flex-row flex-col items-start sm:gap-8 gap-4">
+            {/* <div className="flex sm:flex-row flex-col items-start sm:gap-8 gap-4">
               <div className="bg-hero-bg dark:bg-search p-4 flex items-center justify-center rounded-full">
                 <i className="bg-[url('/images/contact-page/email.svg')] bg-no-repeat bg-contain w-9 h-9 inline-block"></i>
               </div>
@@ -22,7 +22,7 @@ const ContactInfo = () => {
                   </p> */}
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="flex sm:flex-row flex-col items-start sm:gap-8 gap-4">
               <div className="bg-hero-bg dark:bg-search p-4 flex items-center justify-center rounded-full">
                 <i className="bg-[url('/images/contact-page/Career.svg')] bg-no-repeat bg-contain w-9 h-9 inline-block"></i>
