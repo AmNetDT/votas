@@ -225,7 +225,7 @@ const Header: React.FC = () => {
             <MobileHeaderLink key={index} item={item} />
           ))}
           <div className="mt-4 flex flex-col space-y-4 w-full">
-            <Link
+            {/* <Link
               href="/signin"
               className="bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white"
               onClick={() => {
@@ -233,7 +233,7 @@ const Header: React.FC = () => {
               }}
             >
               Login
-            </Link>
+            </Link> */}
             {/* <Link
               href="/signup"
               className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700"
