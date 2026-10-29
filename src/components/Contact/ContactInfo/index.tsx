@@ -13,13 +13,13 @@ const ContactInfo = () => {
               </div>
               <div className="flex md:flex-col sm:flex-row flex-col md:items-start sm:items-center items-start h-full justify-between">
                 <div>
-                  <span className="text-midnight_text dark:text-white text-xl font-bold">
+                  {/* <span className="text-midnight_text dark:text-white text-xl font-bold">
                     Email US
                   </span>
                   <p className="text-DeepOcean font-normal text-xl max-w-80 pt-3 pb-7 dark:text-white/60">
                     We’re here to help. Contact our team at info@votas.com.ng
                     and we’ll respond shortly.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -29,17 +29,17 @@ const ContactInfo = () => {
               </div>
               <div className="flex md:flex-col sm:flex-row flex-col md:items-start sm:items-center items-start h-full justify-between">
                 <div>
-                  <span className="text-midnight_text dark:text-white text-xl font-bold">
+                  {/* <span className="text-midnight_text dark:text-white text-xl font-bold">
                     Address
                   </span>
-                  <p className="text-DeepOcean font-normal text-xl max-w-80 pt-3 pb-7 dark:text-white/60">
+                  {/* <p className="text-DeepOcean font-normal text-xl max-w-80 pt-3 pb-7 dark:text-white/60">
                     SHOP 25, ORELADE LADERA COMPLEX,GBERIGBE, IKORODU. LAGOS.
-                  </p>
-                  <span className="text-midnight_text dark:text-white text-xl font-bold">
+                  </p> */}
+                  {/* <span className="text-midnight_text dark:text-white text-xl font-bold">
                     Address
-                  </span>
+                  </span> */}
                   <p className="text-DeepOcean font-normal text-xl max-w-80 pt-3 pb-7 dark:text-white/60">
-                    09024550723
+                    09024550723 &nbsp; 08135277641
                   </p>
                 </div>
               </div>
